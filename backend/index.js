@@ -13,7 +13,7 @@ require('dotenv').config();
 // console.log("Hello")
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://codequest-1jev.onrender.com',
     credentials: true 
 }))
 
