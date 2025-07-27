@@ -12,7 +12,7 @@ require('dotenv').config();
 
 
 app.use(cors({
-    origin: 'https://codequest-1jev.onrender.com', 
+    origin: 'http://localhost:5173', //https://codequest-1jev.onrender.com
     credentials: true 
 }))
 
@@ -46,16 +46,3 @@ const InitalizeConnection = async ()=>{
 
 
 InitalizeConnection();
-
-
-
-
-// # CLOUDINARY_CLOUD_NAME=djj4ssb5m
-// # CLOUDINARY_API_KEY=244997135396696
-// # CLOUDINARY_API_SECRET=5C2WEWXx8U_Gi_WGLmj5444yAfQ
-
-// # PORT=3000
-// # DB_CONNECT_STRING=mongodb+srv://Sai0410:Sai%400410@codingsa.hu8ximi.mongodb.net/Leetcode
-// # JWT_KEY=70ed27934da41120f22f1160b493f2be467224a30a6efff0ae217e6d7d657bd0
-// # REDIS_PASS=cU5lFmDZru6K6bWIVKvKrd55JeFqDY1V
-
