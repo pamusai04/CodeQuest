@@ -12,7 +12,7 @@ require('dotenv').config();
 
 
 app.use(cors({
-    origin: 'https://codequest-zw5i.onrender.com', 
+    origin: 'https://codequest-1jev.onrender.com', 
     credentials: true 
 }))
 
