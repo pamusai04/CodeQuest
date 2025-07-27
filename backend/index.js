@@ -10,10 +10,9 @@ const submitRouter = require("./src/routes/submit")
 const cors = require('cors')
 require('dotenv').config();
 
-// console.log("Hello")
 
 app.use(cors({
-    origin: 'https://codequest-1jev.onrender.com',
+    origin: 'https://codequest-zw5i.onrender.com', 
     credentials: true 
 }))
 
