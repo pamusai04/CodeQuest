@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express();
 require('dotenv').config();
-const main =  require('./config/db')
+const main =  require('./src/config/db')
 const cookieParser =  require('cookie-parser');
-const authRouter = require("./routes/userAuth");
-const redisClient = require('./config/redis');
-const problemRouter = require("./routes/problemCreator");
-const submitRouter = require("./routes/submit")
+const authRouter = require("./src/routes/userAuth");
+const redisClient = require('./src/config/redis');//src/config/redis
+const problemRouter = require("./src/routes/problemCreator");
+const submitRouter = require("./src/routes/submit")
 const cors = require('cors')
 require('dotenv').config();
 

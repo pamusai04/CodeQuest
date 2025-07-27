@@ -121,7 +121,6 @@ function Admin() {
           })}
         </div>
 
-        {/* Problems List (shown when "Problems List" is selected) */}
         {selectedOption === 'update' && (
           <div className="bg-base-100 rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold mb-6">All Problems</h2>
