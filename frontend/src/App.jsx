@@ -9,7 +9,7 @@ import AdminPanel from './components/AdminPanel';
 import ProblemPage from './pages/ProblemPage';
 import Admin from './pages/Admin';
 import AdminDelete from './components/AdminDelete';
-import UpdateProblem from './components/UpdateProblem'; // Add import
+import UpdateProblem from './components/UpdateProblem';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +34,8 @@ function App() {
         <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login />} />
         <Route path="/signup" element={isAuthenticated ? <Navigate to="/" /> : <Signup />} />
         <Route path="/admin" element={isAuthenticated && user?.role === 'admin' ? <Admin /> : <Navigate to="/" />} />
+        
+        
         <Route
           path="/admin/create"
           element={isAuthenticated && user?.role === 'admin' ? <AdminPanel /> : <Navigate to="/" />}
