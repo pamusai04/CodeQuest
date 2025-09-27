@@ -45,6 +45,7 @@ const createProblem = async (req, res) => {
                 }
             }
         }
+       
 
         const problem = await Problem.create({
             ...req.body,
@@ -177,7 +178,7 @@ const getAllProblem = async (req, res) => {
         if (problems.length === 0) {
             throw new ProblemError("No problems found", 404);
         }
-
+        
         return res.status(200).json(problems);
     } catch (error) {
         if (error instanceof ProblemError) {

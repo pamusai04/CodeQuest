@@ -8,7 +8,7 @@ export const registerUser = createAsyncThunk(
             const response = await axiosClient.post('/user/register', userData);
             return response.data.user;
         } catch (error) {
-            return rejectWithValue(error.response?.data?.message || 'Registration failed');
+            return rejectWithValue(error.response?.data?.error || 'Registration failed');
         }
     }
 );
@@ -20,7 +20,7 @@ export const loginUser = createAsyncThunk(
             const response = await axiosClient.post('/user/login', credentials);
             return response.data.user;
         } catch (error) {
-            return rejectWithValue(error.response?.data?.message || 'Login failed');
+            return rejectWithValue(error.response?.data?.error || 'Login failed');
         }
     }
 );
@@ -29,22 +29,15 @@ export const checkAuth = createAsyncThunk(
     'auth/check',
     async (_, { rejectWithValue }) => {
         try {
-            const token = document.cookie
-                .split('; ')
-                .find(row => row.startsWith('token='))
-                ?.split('=')[1];
-
-            if (!token) {
-                return rejectWithValue('Please log in to continue');
-            }
-
-            const { data } = await axiosClient.get('/user/check');
+            const { data } = await axiosClient.get('/user/check', {
+                withCredentials: true, // Ensure cookie is sent (add this if not in axiosClient defaults)
+            });
             return data.user;
         } catch (error) {
             if (error.response?.status === 401) {
                 return rejectWithValue('Session expired or unauthorized');
             }
-            return rejectWithValue(error.response?.data?.message || 'Authentication check failed');
+            return rejectWithValue(error.response?.data?.error || 'Authentication check failed');
         }
     }
 );
@@ -54,11 +47,9 @@ export const logoutUser = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             await axiosClient.post('/user/logout');
-            // Clear token cookie explicitly
-            document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
             return null;
         } catch (error) {
-            return rejectWithValue(error.response?.data?.message || 'Logout failed');
+            return rejectWithValue(error.response?.data?.error || 'Logout failed');
         }
     }
 );
@@ -85,8 +76,6 @@ const authSlice = createSlice({
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.isAuthenticated = !!action.payload;
-                state.user = action.payload;
-                //Agatha: I'm not sure about this, but I think the user is the one who is responsible for the registration process.
                 state.user = action.payload;
             })
             .addCase(registerUser.rejected, (state, action) => {
