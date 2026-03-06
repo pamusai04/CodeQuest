@@ -1,40 +1,62 @@
-# BelleSpot 💇‍♀️
+# CodeQuest 🚀
 
-BelleSpot is a **salon discovery web application** that allows users to explore nearby beauty salons using an interactive map interface. The platform provides a smooth browsing experience with filters, salon details, and location-based discovery.
+CodeQuest is a **full-stack online coding platform** that allows users to practice coding problems and execute code in multiple programming languages.  
+The platform provides an interactive environment for solving programming challenges with **real-time code execution and performance tracking**.
 
-This project demonstrates modern **frontend development practices using React, Redux, and geospatial mapping**.
-
----
-
-## 🚀 Features
-
-- 🔍 **Salon Discovery** – Search and explore salons on an interactive map  
-- 🗺️ **Map Integration** – Real-time location visualization using Leaflet.js  
-- ⭐ **Ratings & Details** – View salon ratings and service information  
-- 🏠 **Home Service Filter** – Filter salons offering home services  
-- ⚡ **Optimized Performance** – Faster UI rendering using React hooks and Redux state management  
-- 🔐 **Authentication** – Secure login for users and providers using JWT  
+This project simulates an **online judge system similar to LeetCode or HackerRank**, enabling users to improve their problem-solving skills.
 
 ---
 
-## 🛠️ Tech Stack
+# 🌟 Features
 
-### Frontend
-- React.js  
-- Redux.js  
-- HTML5  
-- CSS3  
-- JavaScript (ES6+)  
+## 👤 User Features
+- Solve coding problems directly in the browser
+- Real-time code execution using Judge0 API
+- Support for multiple programming languages
+- View problem descriptions and constraints
+- Track submission results and coding progress
 
-### Mapping
-- Leaflet.js  
+## 🛠️ Admin Features
+- Add new coding problems
+- Manage problem difficulty levels
+- Add and manage test cases
+- Monitor platform usage
 
-### Backend
-- Node.js  
-- Express.js  
+---
 
-### Database
-- MongoDB  
+# 💻 Supported Languages
 
-### Authentication
-- JSON Web Tokens (JWT)
+- C++
+- Java
+- JavaScript
+
+---
+
+# ⚙️ Tech Stack
+
+## Frontend
+- React.js
+- HTML5
+- CSS3
+- JavaScript
+
+## Backend
+- Node.js
+- Express.js
+
+## Database
+- MongoDB
+
+## API Integration
+- Judge0 API (for code execution)
+
+---
+
+# 🧠 How It Works
+
+1. User selects a coding problem.
+2. Writes code in the integrated code editor.
+3. The code is sent to the backend server.
+4. Backend forwards the code to the **Judge0 API**.
+5. Judge0 compiles and executes the code.
+6. The result is returned and displayed to the user.
