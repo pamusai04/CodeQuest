@@ -10,7 +10,7 @@ const submitRouter = require('./src/routes/submit');
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: 'https://codequest-rkjo.onrender.com', 
     credentials: true
 }));
 
